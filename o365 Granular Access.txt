@@ -1,0 +1,101 @@
+you can restrict access so that unmanaged devices can only use Outlook and Teams, and block everything else. It is not an all‑or‑nothing situation.  
+Microsoft Entra Conditional Access gives you fine‑grained control over which Office 365 apps users can access and under what conditions.
+
+🎯 Short Answer
+You can create Conditional Access policies that:
+
+Allow Outlook and Teams on unmanaged devices
+
+Block all other Microsoft 365 apps (SharePoint, OneDrive, Office web apps, etc.)
+
+Optionally require approved client apps or App Protection Policies for Outlook/Teams on personal devices
+
+This is fully supported and widely used in BYOD environments.
+
+🔍 How It Works (Based on Microsoft documentation)
+1. Conditional Access lets you target specific cloud apps
+You can scope policies to individual Microsoft 365 services — not just the whole suite.
+Microsoft’s documentation confirms you can block or limit access to specific apps such as Exchange Online or SharePoint Online independently. 
+
+2. You can block access from unmanaged devices
+Conditional Access supports blocking access to Microsoft 365 apps unless the device is:
+
+Intune‑enrolled
+
+Marked compliant
+
+Hybrid‑joined
+
+Using approved client apps
+
+This is the standard method for restricting BYOD access. 
+
+3. You can allow Outlook and Teams while blocking everything else
+You simply create:
+
+Policy A (Allow)
+
+Target apps: Exchange Online and Microsoft Teams
+
+Condition: Unmanaged devices
+
+Grant: Allow access (optionally require App Protection Policies)
+
+Policy B (Block)
+
+Target apps: Office 365 or specific apps (SharePoint, OneDrive, Office Online, etc.)
+
+Condition: Unmanaged devices
+
+Grant: Block access
+
+Microsoft guidance shows how to block specific apps such as SharePoint or OneDrive while allowing others. 
+
+4. Browser access can be blocked separately
+You can block browser access to Outlook and Teams while still allowing the native apps — meaning you can tighten controls even further if needed. 
+
+5. App Protection Policies (MAM) add extra BYOD security
+If you want Outlook and Teams to be allowed on personal devices but protected, Intune App Protection Policies can enforce:
+
+PIN requirement
+
+Prevent save‑as to personal storage
+
+Restrict copy/paste
+
+Block jailbroken/rooted devices
+
+These apply without requiring device enrollment. 
+
+🧭 Recommended Architecture for Your Requirement
+✔ Allow on unmanaged devices:
+Outlook (Exchange Online)
+
+Teams
+
+✘ Block on unmanaged devices:
+SharePoint Online
+
+OneDrive
+
+Office web apps (Word/Excel/PowerPoint Online)
+
+Any other Microsoft 365 cloud apps
+
+✔ Optional enhancements:
+Require approved client apps (Outlook/Teams only)
+
+Require App Protection Policies for data protection
+
+Block browser access entirely for unmanaged devices
+
+🧪 Deployment Best Practices
+Start in Report‑only mode to validate impact before enforcing. 
+
+Always exclude break‑glass accounts. 
+
+Test with a pilot group of unmanaged devices.
+
+📌 Bottom Line
+You absolutely can restrict unmanaged devices so they only access Outlook and Teams.
+Microsoft 365 access control is granular, not all‑or‑nothing.
