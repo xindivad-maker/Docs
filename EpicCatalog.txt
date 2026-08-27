@@ -1,0 +1,13 @@
+SELECT 
+    h.REPORT_ID,
+    h.REPORT_NAME,
+    h.REPORT_DESC,
+    t.NAME AS Report_Type,
+    h.OWNER_USER_ID,
+    h.IS_ACTIVE_YN,
+    h.CREATE_DATE
+FROM Clarity.dbo.HRX_HEADER h
+LEFT JOIN Clarity.dbo.HRX_TYPE t 
+    ON h.REPORT_TYPE_C = t.REPORT_TYPE_C
+WHERE h.IS_ACTIVE_YN = 'Y'
+ORDER BY h.REPORT_NAME;
