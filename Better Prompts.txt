@@ -1,0 +1,46 @@
+Overview
+AI models (like ChatGPT) are built to give answers, but sometimes they guess or make things up—which scientists call "hallucination." Researchers found three clever ways to ask questions (or "prompt" the AI) to make its answers more accurate, detailed, and helpful.
+
+Technique 1: Emotional Persuasion ("EmotionPrompt")
+How it works: You talk to the AI with enthusiasm, importance, or personal feeling—much like encouraging a friend to try their best. Expressing that the task really matters to you encourages the AI to provide a more thorough, thoughtful response.
+
+Middle-School Example:
+
+Basic way: "Write a short story about a detective dog."
+
+Emotion way: "I'm working really hard on my creative writing assignment and want to make my class laugh! Please write an awesome short story about a detective dog."
+
+Technique 2: Chain-of-Thought
+How it works: Instead of asking for a big answer all at once, you guide the AI step-by-step. Breaking down a complex question into smaller, logical pieces gives the AI a clear roadmap to follow.
+
+Middle-School Example:
+
+Basic way: "Plan a fun birthday party for 10 kids."
+
+Chain-of-Thought way: "Plan a fun birthday party for 10 kids. Walk through this step-by-step:
+
+Pick an exciting theme.
+
+Suggest two fun games that fit the theme.
+
+List budget-friendly snacks to serve.
+
+Write out a schedule for a two-hour party."
+
+Technique 3: Step-Back Prompting
+How it works: Before jumping into a specific question, you ask the AI to explain the big-picture concepts or background principles first. Understanding the overall topic helps the AI answer your specific question much better.
+
+Middle-School Example:
+
+Basic way: "Why do leaves change color in the fall?"
+
+Step-Back way: "What is chlorophyll, and how do trees use sunlight to make food? Once you explain that, break down why leaves change color when autumn arrives."
+
+Key Takeaways to Share
+Be clear and give structure: The better your instructions, the better the AI's response.
+
+Add a little motivation: Caring about the output encourages more detailed answers.
+
+Break big jobs into steps: AI works best when given a clear sequence to follow.
+
+Zoom out before zooming in: Asking about the big picture helps the AI give smarter answers to specific questions.
