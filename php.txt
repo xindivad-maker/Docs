@@ -1,0 +1,29 @@
+﻿PHP Detection
+
+To check if PHP is installed on your Red Hat server, you can use several methods depending on whether you want to check the version, look for the binary, or see if it's managed by the package manager.
+Here are the most common and effective ways to check:
+1. Check the PHP Version
+The quickest way is to ask the system for the installed PHP version. Run the following command in your terminal:
+Bash
+php -v
+* 
+If installed: You will see output detailing the PHP version (e.g., PHP 8.2.x) along with build details.
+* If not installed: You will see an error message such as bash: php: command not found.
+2. Check Using the Package Manager (RPM / DNF)
+Since Red Hat Enterprise Linux (RHEL) uses dnf (or yum on older versions), you can query the system packages directly to see if PHP is installed, even if the command isn't in your current PATH:
+Bash
+rpm -qa | grep php
+   * 
+If installed: This will list all installed packages containing "php" (such as php-cli, php-common, etc.).
+   * If not installed: The command will return no output.
+Alternatively, you can check specifically via DNF:
+Bash
+dnf list installed | grep php
+3. Locate the PHP Binary
+If you suspect PHP is installed in a directory that isn't currently in your shell's PATH, you can search for the executable file:
+Bash
+which php
+or search system-wide:
+Bash
+find / -name php -type f 2>/dev/null
+Need to inst
